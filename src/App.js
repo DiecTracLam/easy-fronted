@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import Countdown from './features/CountDownList';
+import Todo from './Components/Todo';
+import MagicBox from './Components/MagicBox';
+import DualCounter from './Components/TodoList';
+import TodoFeature from './features/ToDo';
+import { useEffect, useState } from 'react';
+import {
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import productApi from './api/productApi';
 
 function App() {
+
+  useEffect(()=>{
+    async function fetchData(){
+      const params={
+        _limit:10
+      }
+      // const productList= await productApi.getAll(params);
+      // console.log(productList)
+    }
+    fetchData()
+  },[])
+
+  const [count,setCount]=useState(false)
+
+  function change(e){
+    setCount(Count=>!Count)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Link to="/">Home</Link><br/>
+        <Link to="/Countdown">Countdown</Link><br/>
+        <Link to="/Todo">Todo</Link>
+
+        <Route path="/" component={MagicBox}/>
+        <Route path="/Countdown" component={Countdown} />
+        <Route path="/Todo" component={TodoFeature} />
+        <p onClick={change}>do</p>
+        {/* {count &&<Todo/>}
+        <Countdown/>
+        <MagicBox/>
+        <DualCounter/> */}
     </div>
   );
 }
