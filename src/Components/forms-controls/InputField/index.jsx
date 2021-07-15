@@ -19,7 +19,7 @@ function InputField(props) {
   return (
     <Controller         // Controller là dùng để quản lý các biến như name control vào cái render mà mình muốn 
       render={({ field: { ref, name, onChange, onBlur, value } , fieldState:{invalid,error,isTouched}}) => (
-        // console.log('ewe', error?.message," ",invalid),
+        console.log('ewe', error?.message," ",invalid),
         (<TextField 
             // inputRef={ref} 
             name={name} 
