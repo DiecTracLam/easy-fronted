@@ -12,8 +12,8 @@ function InputField(props) {
   const { formState , register} = form;
   const {errors, touchedFields}=formState
   // console.log(register)
-  console.log(touchedFields[name])
-  console.log(errors[name]);
+  // console.log(touchedFields[name])
+  // console.log(errors[name]);
   // console.log(form.control)
   // console.log(form.handleSubmit)
   return (
@@ -29,6 +29,8 @@ function InputField(props) {
             onBlur={onBlur}
             error={invalid} 
             helperText={error?.message}
+            variant='outlined'
+            margin="normal"
         />)
       )}
       name={name}                 //name="NewTodo" Phải có name nếu ko nó sẽ báo lỗi 
