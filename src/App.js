@@ -10,6 +10,7 @@ import {
   Link
 } from "react-router-dom";
 import productApi from './api/productApi';
+import Header from 'Components/Header'
 
 function App() {
 
@@ -31,9 +32,7 @@ function App() {
   }
   return (
     <div className="App">
-        <Link to="/">Home</Link><br/>
-        <Link to="/Countdown">Countdown</Link><br/>
-        <Link to="/Todo">Todo</Link>
+        <Header />
 
         <Route path="/" component={MagicBox}/>
         <Route path="/Countdown" component={Countdown} />

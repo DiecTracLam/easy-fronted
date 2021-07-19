@@ -93,7 +93,6 @@ function ListPage(props) {
     const newArray=[...todoList,newTodo]
     setTodoList(newArray)
   }
-
   return (
     <div>
       <h3>TodoForm</h3>
